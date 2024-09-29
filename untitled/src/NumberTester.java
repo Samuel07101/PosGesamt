@@ -1,4 +1,5 @@
 import java.io.*;
+import java.net.Socket;
 
 public class NumberTester{
     private NumberTest oddTester;
@@ -7,7 +8,6 @@ public class NumberTester{
 
     private int numberOfTests;
 
-    private int[] numbers;
     private String path;
 
     public NumberTester(String path) {
@@ -24,10 +24,31 @@ public class NumberTester{
                 String[] temp = line.split(" ");
 
                 int testingNumber = Integer.parseInt(temp[1]);
+                Boolean erg;
                 switch (Integer.parseInt(temp[0])){
-                    case 1: oddTester.testNumber(testingNumber);break;
-                    case 2: primeTester.testNumber(testingNumber);break;
-                    case 3: palindromTester.testNumber(testingNumber);break;
+                    case 1:  erg  = oddTester.testNumber(testingNumber);
+                    if(erg){
+                        testFile("ODD");
+                    }else{
+                        testFile("EVEN");
+                    }
+                    break;
+                    case 2:   erg  = primeTester.testNumber(testingNumber);
+                    if(erg){
+                        testFile("PRIME");
+                    }else{
+                        testFile("NO PRIME");
+                    }
+                    break;
+                    case 3:   erg  = palindromTester.testNumber(testingNumber);
+                        if(erg){
+                            testFile("PALINDROME");
+                        }else{
+                            testFile("NO PALINDROME");
+                        }
+                    break;
+
+                    default:testFile("ERROR");
                 }
 
             }
@@ -52,5 +73,7 @@ public class NumberTester{
         this.palindromTester = palindromTester;
     }
 
-
+    public void testFile(String erg){
+        System.out.println(erg);
+    }
 }
