@@ -29,7 +29,7 @@ public class Main {
             char[] c = temp.toCharArray();
             char[] returnChar = c;
 
-            int x = c.length;
+            int x = c.length-1;
             for(int i = 0;i <= c.length;i++){
                if(returnChar[i] != c[x]){
                    return false;
@@ -41,5 +41,7 @@ public class Main {
         numberTester.setOddEventTester(oddTester);
         numberTester.setPrimeTester(primeTester);
         numberTester.setPalindromTester(palindromTester);
+
+        numberTester.numberTester("numbers.txt");
     }
 }
