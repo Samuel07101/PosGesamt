@@ -1,4 +1,6 @@
+import javax.sound.midi.Soundbank;
 import java.io.Console;
+import java.util.Scanner;
 
 public class MainCalculator {
 
@@ -10,19 +12,24 @@ public class MainCalculator {
         boolean loop = true;
         Number numb;
         Number numb1;
+        String what = "";
         while(loop){
+            Number retNumber = new Number();
             boolean again = true;
-            Console console = System.console();
-            String input = console.readLine();
+
+            Main.printUI();
+            Scanner console = new Scanner(System.in);
+            String input = console.nextLine();
+
             int uiInput = Integer.parseInt(input);
             int function = 0;
-            Main.printUI();
+
 
             switch (uiInput) {
                 case 1:
                      numb = new Number();
                      numb1 =  new Number();
-
+                     what = "add";
                      add = (x, y) -> {
                         Number ret = new Number();
                         ret.setA(x.getA() + y.getA());
@@ -50,27 +57,27 @@ public class MainCalculator {
                         again = false;
 
                         System.out.println("Enter number a");
-                        input = console.readLine();
-                        numb.setA(Double.parseDouble(input));
+                        input = console.nextLine();
+                        numb.setA(Integer.parseInt(input));
                         System.out.println("Enter number B");
-                        input = console.readLine();
-                        numb1.setA(Double.parseDouble(input));
+                        input = console.nextLine();
+                        numb1.setA(Integer.parseInt(input));
 
                         printFunctions();
-                        input = console.readLine();
+                        input = console.nextLine();
                         function = Integer.parseInt(input);
                         switch (function) {
                             case 1:
-                                rationalC.add(numb, numb1);
+                                retNumber= rationalC.add(numb, numb1);
                                 break;
                             case 2:
-                                rationalC.substract(numb, numb1);
+                                retNumber= rationalC.substract(numb, numb1);
                                 break;
                             case 3:
-                                rationalC.substract(numb, numb1);
+                                retNumber= rationalC.substract(numb, numb1);
                                 break;
                             case 4:
-                                rationalC.substract(numb, numb1);
+                                retNumber= rationalC.substract(numb, numb1);
                                 break;
                             case 5:
                                 again = true;
@@ -82,27 +89,32 @@ public class MainCalculator {
                     }
                     break;
                 case 2:
+                    what = "vector";
                      numb= new Number();
                      numb1 =  new Number();
 
                      add = (x, y) -> {
                         Number ret = new Number();
                         ret.setA(x.getA() + y.getA());
+                        ret.setB(x.getB() + x.getB());
                         return ret;
                     };
                      subtract = (x, y) -> {
                         Number ret = new Number();
                         ret.setA(x.getA() - y.getA());
+                        ret.setB(x.getB() - y.getB());
                         return ret;
                     };
                      multiply = (x, y) -> {
                         Number ret = new Number();
-                        ret.setA(x.getA() * y.getA());
+                        ret.setA(x.getA() * y.getB());
+                        ret.setB(x.getB() * x.getA());
                         return ret;
                     };
                      divide = (x, y) -> {
                         Number ret = new Number();
-                        ret.setA(x.getA() / y.getA());
+                        ret.setA(x.getA() / y.getB());
+                        ret.setB(x.getB() / y.getA());
                         return ret;
                     };
 
@@ -113,34 +125,35 @@ public class MainCalculator {
                         again = false;
 
                         System.out.println("Enter number x");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb.setA(Double.parseDouble(input));
                         System.out.println("Enter number y");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb.setB(Double.parseDouble(input));
                         System.out.println("Enter number x");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb1.setA(Double.parseDouble(input));
                         System.out.println("Enter number y");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb1.setB(Double.parseDouble(input));
 
 
                         printFunctions();
-                        input = console.readLine();
+                        input = console.nextLine();
                         function = Integer.parseInt(input);
+
                         switch (function) {
                             case 1:
-                                vectorC.add(numb, numb1);
+                                retNumber= vectorC.add(numb, numb1);
                                 break;
                             case 2:
-                                vectorC.substract(numb, numb1);
+                                retNumber= vectorC.substract(numb, numb1);
                                 break;
                             case 3:
-                                vectorC.substract(numb, numb1);
+                                retNumber= vectorC.substract(numb, numb1);
                                 break;
                             case 4:
-                                vectorC.substract(numb, numb1);
+                                retNumber= vectorC.substract(numb, numb1);
                                 break;
                             case 5:
                                 again = true;
@@ -152,6 +165,7 @@ public class MainCalculator {
                     }
                     break;
                 case 3:
+                    what = "complex";
                      numb = new Number();
                      numb1 =  new Number();
 
@@ -182,29 +196,29 @@ public class MainCalculator {
                         again = false;
 
                         System.out.println("Enter number a");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb.setA(Double.parseDouble(input));
                         System.out.println("Enter number B");
-                        input = console.readLine();
+                        input = console.nextLine();
                         numb1.setA(Double.parseDouble(input));
 
 
 
                         printFunctions();
-                        input = console.readLine();
+                        input = console.nextLine();
                         function = Integer.parseInt(input);
                         switch (function) {
                             case 1:
-                                complexC.add(numb, numb1);
+                                retNumber= complexC.add(numb, numb1);
                                 break;
                             case 2:
-                                complexC.substract(numb, numb1);
+                                retNumber= complexC.substract(numb, numb1);
                                 break;
                             case 3:
-                                complexC.substract(numb, numb1);
+                                retNumber= complexC.substract(numb, numb1);
                                 break;
                             case 4:
-                                complexC.substract(numb, numb1);
+                                retNumber= complexC.substract(numb, numb1);
                                 break;
                             case 5:
                                 again = true;
@@ -221,6 +235,8 @@ public class MainCalculator {
                 default:
                     System.out.println("Error wrong input");
             }
+
+            printNumb(retNumber,what);
         }
     }
 
@@ -228,6 +244,22 @@ public class MainCalculator {
         System.out.println("1 - add");
         System.out.println("2 - subtract");
         System.out.println("3 - mulitply");
+        System.out.println("4 - divide");
+        System.out.println("5 - type numbers again");
 
+    }
+
+    public void printNumb(Number number,String s){
+        System.out.println("------------------");
+        System.out.println("   Solution:");
+        if(s.equals("add")){
+            System.out.println(number.getA());
+        } else if (s.equals("vector")) {
+            System.out.println("a: "+number.getA());
+            System.out.println("b: "+number.getB());
+        }else if(s.equals("complex")){
+            System.out.println(number.getA());
+        }
+        System.out.println("------------------");
     }
 }

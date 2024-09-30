@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
       MainCalculator main = new MainCalculator();
+      main.proccess();
     }
 
     public static void printUI(){
@@ -16,13 +17,4 @@ public class Main {
         System.out.println("4 - Exit Programm");
     }
 
-    public static void printOptions(){
-        System.out.println("1 - Plus");
-        System.out.println("2 - Substract");
-        System.out.println("3 - Multiply");
-        System.out.println("4 - Divide");
-        System.out.println("5 - Enter Numbers again");
-    }
-
-    }
 }
