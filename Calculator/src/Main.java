@@ -9,12 +9,5 @@ public class Main {
       main.proccess();
     }
 
-    public static void printUI(){
-        System.out.println("Choose Calculator");
-        System.out.println("1 - Relational calculator");
-        System.out.println("2 - Vector calculator");
-        System.out.println("3 - Complex calculator");
-        System.out.println("4 - Exit Programm");
-    }
 
 }

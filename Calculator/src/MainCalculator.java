@@ -17,7 +17,7 @@ public class MainCalculator {
             Number retNumber = new Number();
             boolean again = true;
 
-            Main.printUI();
+            printUI();
             Scanner console = new Scanner(System.in);
             String input = console.nextLine();
 
@@ -261,5 +261,13 @@ public class MainCalculator {
             System.out.println(number.getA());
         }
         System.out.println("------------------");
+    }
+
+    public void printUI(){
+        System.out.println("Choose Calculator");
+        System.out.println("1 - Relational calculator");
+        System.out.println("2 - Vector calculator");
+        System.out.println("3 - Complex calculator");
+        System.out.println("4 - Exit Programm");
     }
 }
