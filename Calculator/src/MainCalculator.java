@@ -75,10 +75,10 @@ public class MainCalculator {
                                 retNumber= rationalC.substract(numb, numb1);
                                 break;
                             case 3:
-                                retNumber= rationalC.substract(numb, numb1);
+                                retNumber= rationalC.multiply(numb, numb1);
                                 break;
                             case 4:
-                                retNumber= rationalC.substract(numb, numb1);
+                                retNumber= rationalC.divdide(numb, numb1);
                                 break;
                             case 5:
                                 again = true;
