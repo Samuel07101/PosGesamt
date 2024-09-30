@@ -87,7 +87,9 @@ public class MainCalculator {
                                 System.out.println("Number not included");
                         }
 
-                        printNumb(retNumber,what);
+                        if(!again) {
+                            printNumb(retNumber, what);
+                        }
                     }
                     break;
                 case 2:
@@ -167,7 +169,9 @@ public class MainCalculator {
                                 System.out.println("Number not included");
                         }
 
-                        printNumb(retNumber,what);
+                        if(!again) {
+                            printNumb(retNumber, what);
+                        }
                     }
                     break;
                 case 3:
@@ -201,12 +205,14 @@ public class MainCalculator {
                     while(again) {
                         again = false;
 
-                        System.out.println("Enter number a");
+                        System.out.println("Enter number a ->");
                         input = console.nextLine();
                         numb.setA(Double.parseDouble(input));
-                        System.out.println("Enter number B");
+                        System.out.println();
+                        System.out.print("Enter number b ->");
                         input = console.nextLine();
                         numb1.setA(Double.parseDouble(input));
+                        System.out.println();
 
 
 
@@ -216,19 +222,15 @@ public class MainCalculator {
                         switch (function) {
                             case 1:
                                 retNumber= complexC.add(numb, numb1);
-                                printNumb(retNumber,what);
                                 break;
                             case 2:
                                 retNumber= complexC.substract(numb, numb1);
-                                printNumb(retNumber,what);
                                 break;
                             case 3:
                                 retNumber= complexC.multiply(numb, numb1);
-                                printNumb(retNumber,what);
                                 break;
                             case 4:
                                 retNumber= complexC.divdide(numb, numb1);
-                                printNumb(retNumber,what);
                                 break;
                             case 5:
                                 again = true;
@@ -236,6 +238,10 @@ public class MainCalculator {
                             default:
                                 again = true;
                                 System.out.println("Number not included");
+                        }
+
+                        if(!again) {
+                            printNumb(retNumber, what);
                         }
                     }
                     break;
