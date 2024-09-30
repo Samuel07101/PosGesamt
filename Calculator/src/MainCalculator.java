@@ -210,15 +210,19 @@ public class MainCalculator {
                         switch (function) {
                             case 1:
                                 retNumber= complexC.add(numb, numb1);
+                                printNumb(retNumber,what);
                                 break;
                             case 2:
                                 retNumber= complexC.substract(numb, numb1);
+                                printNumb(retNumber,what);
                                 break;
                             case 3:
                                 retNumber= complexC.substract(numb, numb1);
+                                printNumb(retNumber,what);
                                 break;
                             case 4:
                                 retNumber= complexC.substract(numb, numb1);
+                                printNumb(retNumber,what);
                                 break;
                             case 5:
                                 again = true;
@@ -236,7 +240,6 @@ public class MainCalculator {
                     System.out.println("Error wrong input");
             }
 
-            printNumb(retNumber,what);
         }
     }
 
