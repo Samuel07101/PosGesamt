@@ -86,6 +86,8 @@ public class MainCalculator {
                                 again = true;
                                 System.out.println("Number not included");
                         }
+
+                        printNumb(retNumber,what);
                     }
                     break;
                 case 2:
@@ -119,7 +121,7 @@ public class MainCalculator {
                     };
 
 
-                    RationalCalculator vectorC = new RationalCalculator(add,subtract,multiply,divide);
+                    VectorCalculator vectorC = new VectorCalculator(add,subtract,multiply,divide);
 
                     while(again) {
                         again = false;
@@ -138,6 +140,7 @@ public class MainCalculator {
                         numb1.setB(Double.parseDouble(input));
 
 
+
                         printFunctions();
                         input = console.nextLine();
                         function = Integer.parseInt(input);
@@ -148,12 +151,13 @@ public class MainCalculator {
                                 break;
                             case 2:
                                 retNumber= vectorC.substract(numb, numb1);
+
                                 break;
                             case 3:
-                                retNumber= vectorC.substract(numb, numb1);
+                                retNumber= vectorC.multiply(numb, numb1);
                                 break;
                             case 4:
-                                retNumber= vectorC.substract(numb, numb1);
+                                retNumber= vectorC.divdide(numb, numb1);
                                 break;
                             case 5:
                                 again = true;
@@ -162,6 +166,8 @@ public class MainCalculator {
                                 again = true;
                                 System.out.println("Number not included");
                         }
+
+                        printNumb(retNumber,what);
                     }
                     break;
                 case 3:
@@ -189,7 +195,7 @@ public class MainCalculator {
                         ret.setA(x.getA() / y.getA());
                         return ret;
                     };
-                    RationalCalculator complexC = new RationalCalculator(add, subtract, multiply, divide);
+                    ComplexCalculator complexC = new ComplexCalculator(add, subtract, multiply, divide);
 
 
                     while(again) {
@@ -217,11 +223,11 @@ public class MainCalculator {
                                 printNumb(retNumber,what);
                                 break;
                             case 3:
-                                retNumber= complexC.substract(numb, numb1);
+                                retNumber= complexC.multiply(numb, numb1);
                                 printNumb(retNumber,what);
                                 break;
                             case 4:
-                                retNumber= complexC.substract(numb, numb1);
+                                retNumber= complexC.divdide(numb, numb1);
                                 printNumb(retNumber,what);
                                 break;
                             case 5:
