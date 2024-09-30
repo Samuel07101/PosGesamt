@@ -56,13 +56,14 @@ public class MainCalculator {
                     while(again) {
                         again = false;
 
-                        System.out.println("Enter number a");
+                        System.out.print("Enter number a ->");
                         input = console.nextLine();
                         numb.setA(Integer.parseInt(input));
-                        System.out.println("Enter number B");
+                        System.out.println();
+                        System.out.print("Enter number b ->");
                         input = console.nextLine();
                         numb1.setA(Integer.parseInt(input));
-
+                        System.out.println();
                         printFunctions();
                         input = console.nextLine();
                         function = Integer.parseInt(input);
@@ -128,18 +129,22 @@ public class MainCalculator {
                     while(again) {
                         again = false;
 
-                        System.out.println("Enter number x");
+                        System.out.println("Enter number x1 ->");
                         input = console.nextLine();
                         numb.setA(Double.parseDouble(input));
-                        System.out.println("Enter number y");
+                        System.out.println();
+                        System.out.print("Enter number y1 ->");
                         input = console.nextLine();
                         numb.setB(Double.parseDouble(input));
-                        System.out.println("Enter number x");
+                        System.out.println();
+                        System.out.print("Enter number x2 ->");
                         input = console.nextLine();
                         numb1.setA(Double.parseDouble(input));
-                        System.out.println("Enter number y");
+                        System.out.println();
+                        System.out.print("Enter number y2 ->");
                         input = console.nextLine();
                         numb1.setB(Double.parseDouble(input));
+                        System.out.println();
 
 
 
@@ -280,7 +285,7 @@ public class MainCalculator {
 
     public void printUI(){
         System.out.println("Choose Calculator");
-        System.out.println("1 - Relational calculator");
+        System.out.println("1 - Rational calculator");
         System.out.println("2 - Vector calculator");
         System.out.println("3 - Complex calculator");
         System.out.println("4 - Exit Programm");
