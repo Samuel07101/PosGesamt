@@ -26,15 +26,16 @@ public class Main {
                 .map(s -> s.split(";"))
                 .map(s -> new Weapons(
                         s[0],
-                        Integer.parseInt(s[1]),
-                        Integer.parseInt(s[2]),
+                        Integer.parseInt(s[5]),
+                        Integer.parseInt(s[6]),
                         Integer.parseInt(s[3]),
                         Integer.parseInt(s[4]),
-                        DamageType.valueOf(s[5]),
-                        WeaponType.valueOf(s[6])
+                        DamageType.valueOf(s[1]),
+                        WeaponType.valueOf(s[2])
                 ))
                 .collect(Collectors.toList());
             String s = "sssa";
+
 
     }
 
