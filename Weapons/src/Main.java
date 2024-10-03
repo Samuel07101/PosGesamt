@@ -34,7 +34,8 @@ public class Main {
                         WeaponType.valueOf(s[2])
                 ))
                 .collect(Collectors.toList());
-            String s = "sssa";
+            list = Files.lines(new File("weapons.csv"0))
+
 
 
     }
