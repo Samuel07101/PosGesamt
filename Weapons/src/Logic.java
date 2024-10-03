@@ -1,26 +1,17 @@
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) throws IOException {
-        java.util.List<Weapons> list;
-        list = new ArrayList<>();
-        list.sort(new Comparator<Weapons>() {
-            @Override
-            public int compare(Weapons o1, Weapons o2) {
-                return Integer.compare(o1.getDamage(), o2.getDamage());
-            }
-        });
+public class Logic {
 
-        list.stream().sorted( );
+    public void readCSV() throws IOException {
+        List<Weapons> list = new ArrayList<>();
+        List<Weapons> damageList = new ArrayList<>();
+        List<Weapons> typelist = new ArrayList<>();
 
         list = Files.lines(new File("weapons.csv").toPath())
                 .skip(1)
@@ -36,10 +27,18 @@ public class Main {
                 ))
                 .collect(Collectors.toList());
 
+        damageList = list;
+        damageList.sort((w1,w2) -> {
+           return Integer.compare(w1.getDamage(),w2.getDamage());
+        });
+        typelist = list;
+        typelist.sort((w1,w2) ->  {
+
+            if(
+        });
+
 
 
 
     }
-
 }
-
