@@ -7,13 +7,19 @@ import java.util.stream.Collectors;
 
 public class Logic {
     Printable printable;
+    private Weapons minDamage;
+    private Weapons mostStre;
+    private List<Weapons> missiles;
+    private List<Weapons> list;
+    private List<Weapons> damageList;
+    private String longestName;
     private String[] arr = new String[10];
     Random random;
     private int[] bigInt = new int[10000];
 
     public void readCSV() throws IOException {
-        List<Weapons> list = new ArrayList<>();
-        List<Weapons> damageList = new ArrayList<>();
+        list = new ArrayList<>();
+       damageList = new ArrayList<>();
         List<Weapons> typelist = new ArrayList<>();
 
         list = Files.lines(new File("weapons.csv").toPath())
@@ -67,6 +73,34 @@ public class Logic {
                     s.append(AlphaNumericStr.charAt(ch));
                 }
                 arr[i] = s.toString();
+            }
+        }
+
+        public List<String> upperCase(String[] strings){
+            for(int i = 0; i <= strings.length;i++){
+                strings[i] = strings[i].toUpperCase();
+            }
+            return Arrays.stream(strings).toList();
+        }
+
+        public void findReq(){
+            minDamage = damageList.get(damageList.size());
+            List<Weapons> strength = list;
+
+            strength.sort((o1, o2) -> {
+                return Integer.compare(o1.getStrength(),o2.getStrength());
+            });
+            mostStre = strength.get(0);
+
+            List<Weapons> nameLength = list;
+            nameLength.sort(((o1, o2) -> {
+                return Integer.compare(o1.getName().length(),o2.getName().length());
+            }));
+            longestName = nameLength.get(0).getName();
+
+            List<String> names = new ArrayList<>();
+            for(int i = 0;i<=list.size();i++){
+                names.add(list.get(i).getName());
             }
         }
 
