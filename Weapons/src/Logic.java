@@ -102,6 +102,18 @@ public class Logic {
             for(int i = 0;i<=list.size();i++){
                 names.add(list.get(i).getName());
             }
+
+            int[] speeds = new int[list.size()];
+            for(int i = 0;i<list.size();i++){
+                speeds[i] = list.get(i).getSpeed();
+            }
+            int[] values = new int[list.size()];
+            for(int i = 0;i <= list.size();i++){
+                values[i] = list.get(i).getValue();
+            }
+            int sumValue = Arrays.stream(values).sum();
+
+            int hashcodes = list.stream().map(weapons -> list.stream().collect(Collectors.);
         }
 
     public void print(){
