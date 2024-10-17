@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Weapons {
         private String name;
@@ -86,5 +90,21 @@ public class Weapons {
     @Override
     public int hashCode() {
         return Objects.hash(name, damage, damageType, weaponType);
+    }
+
+    public int[] sumSquare(){
+        List<Integer> list = new ArrayList<>();
+        int[] sum =  list.stream().map(x -> {
+            x *= x;
+            return x;
+        }).mapToInt((x) -> {
+            return x.intValue();
+        }).toArray();
+
+        return sum;
+    }
+
+    public void words(){
+        
     }
 }

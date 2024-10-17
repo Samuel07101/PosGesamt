@@ -113,7 +113,7 @@ public class Logic {
             }
             int sumValue = Arrays.stream(values).sum();
 
-            int hashcodes = list.stream().collect(Collectors.toList()).stream().;
+            int hashcodes = list.stream().collect(Collectors.toList()).hashCode();
 
         }
 
